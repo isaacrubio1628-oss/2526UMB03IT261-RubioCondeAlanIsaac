@@ -1,9 +1,9 @@
-# HTML
+#Mi vida en 10 años 
 <html>
   <head>
     <body>
-    <p>En el primer año me veo siguiendo estudiando la carrera en octavo semestre
-    </p>En el segundo año Termine la carre encontrandk un buen empleo empleando lo que aprendi y lo que se hacer</p>
+    <p>•En el primer año me veo siguiendo estudiando la carrera en octavo semestre
+    </p>•En el segundo año Termine la carre encontrandk un buen empleo empleando lo que aprendi y lo que se hacer</p>
       <p>En el tercer año voy poco a poco subiendo de puesto y trabajandl aun mas duro</p>
       <p>En el cuarto año soy alguien importante en la empresa donde estoy trabajando y con un buen sueldo donde puedo comprame mi propio carro</p>
       <p>En el quinto año empezar a cotizar precios para comprar un terreno con mi novia y empezar a ver el material</p>
