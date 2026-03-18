@@ -17,3 +17,7 @@ h3{
 img{
     width: 250px;
 }
+table{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
