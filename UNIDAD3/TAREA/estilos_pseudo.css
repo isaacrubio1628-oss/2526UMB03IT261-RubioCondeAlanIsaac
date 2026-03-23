@@ -1,0 +1,31 @@
+button:hover {
+    color: cyan;
+    background-color: darkslateblue;
+}
+button:active{
+    background-color: blueviolet;
+}
+ul:hover{
+    color:turquoise;
+}
+a:visited{
+    color: cornflowerblue;
+}
+a:link{
+    color: seagreen;
+}
+p:first-child{
+    color:green;
+}
+p:last-child{
+    color: rebeccapurple;
+}
+ol:hover{
+    color: red;
+}
+p:hover{
+    text-align: right;
+}
+table:hover{
+    color: skyblue;
+}
