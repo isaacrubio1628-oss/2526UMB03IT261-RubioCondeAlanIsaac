@@ -1,0 +1,25 @@
+/* Selector de elemento de clase */
+.Encabezado {
+    color:blueviolet;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/* Selector de id */
+#Principal{
+    font-size: 30px;
+}
+/* Selector descendente */
+div p {
+    color: aqua;
+}
+/* Selector de pseudoclase*/
+a:hover {
+    color:cornflowerblue
+}
+/* Selector universal*/
+* {
+    text-align: center;
+}
+/* Selector de grupo */
+ol, p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
