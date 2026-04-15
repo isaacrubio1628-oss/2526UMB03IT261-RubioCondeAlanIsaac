@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master en Regex - 10 Ejemplos</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f9; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; }
+        .example-card { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .example-card:last-child { border-bottom: none; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: #34495e; }
+        code { background: #272822; color: #f8f8f2; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        input { width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; outline: none; transition: 0.3s; }
+        .valid { border-color: #2ecc71; background: #eafaf1; }
+        .invalid { border-color: #e74c3c; background: #fdf2f2; }
+        small { color: #7f8c8d; display: block; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>10 Ejemplos de Regex en JS</h1>
+    <p style="text-align: center;">Escribe en los cuadros para probar cada expresión:</p>
+
+    <div class="example-card">
+        <label>1. Email Básico <code>/^[^\s@]+@[^\s@]+\.[^\s@]+$/</code></label>
+        <input type="text" placeholder="ejemplo@correo.com" oninput="validate(this, /^[^\s@]+@[^\s@]+\.[^\s@]+$/)">
+    </div>
+
+    <div class="example-card">
+        <label>2. Solo Números (Enteros) <code>/^\d+$/</code></label>
+        <input type="text" placeholder="123456" oninput="validate(this, /^\d+$/)">
+    </div>
+
+    <div class="example-card">
+        <label>3. Fecha (DD/MM/AAAA) <code>/^\d{2}\/\d{2}\/\d{4}$/</code></label>
+        <input type="text" placeholder="15/04/2026" oninput="validate(this, /^\d{2}\/\d{2}\/\d{4}$/)">
+    </div>
+
+    <div class="example-card">
+        <label>4. Password Segura (Min 8 caract, 1 Mayús, 1 Núm) <code>/^(?=.*[A-Z])(?=.*\d).{8,}$/</code></label>
+        <input type="text" placeholder="Ejemplo123" oninput="validate(this, /^(?=.*[A-Z])(?=.*\d).{8,}$/)">
+    </div>
+
+    <div class="example-card">
+        <label>5. Código Postal (5 dígitos) <code>/^\d{5}$/</code></label>
+        <input type="text" placeholder="28001" oninput="validate(this, /^\d{5}$/)">
+    </div>
+
+    <div class="example-card">
+        <label>6. Solo letras y espacios <code>/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/</code></label>
+        <input type="text" placeholder="Juan Perez" oninput="validate(this, /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/)">
+    </div>
+
+    <div class="example-card">
+        <label>7. URL (HTTP/HTTPS) <code>/^https?:\/\/[\w.-]+\.[a-z]{2,}$/</code></label>
+        <input type="text" placeholder="https://google.com" oninput="validate(this, /^https?:\/\/[\w.-]+\.[a-z]{2,}$/)">
+    </div>
+
+    <label style="margin-top:20px">8. Limpiar Texto (Extraer solo números)</label>
+    <input type="text" id="cleanInput" placeholder="Texto con 123 números" oninput="cleanText()">
+    <small id="cleanResult">Resultado: </small>
+
+    <div class="example-card">
+        <label>9. Formato Tarjeta Crédito (4-4-4-4) <code>/^\d{4}-\d{4}-\d{4}-\d{4}$/</code></label>
+        <input type="text" placeholder="1111-2222-3333-4444" oninput="validate(this, /^\d{4}-\d{4}-\d{4}-\d{4}$/)">
+    </div>
+
+    <div class="example-card">
+        <label>10. Usuario de Twitter/IG <code>/^@\w{1,15}$/</code></label>
+        <input type="text" placeholder="@usuario_pro" oninput="validate(this, /^@\w{1,15}$/)">
+    </div>
+</div>
+
+<script>
+    // Función para validar visualmente
+    function validate(input, regex) {
+        if (regex.test(input.value)) {
+            input.className = 'valid';
+        } else {
+            input.className = 'invalid';
+            if(input.value === "") input.className = "";
+        }
+    }
+
+    // Función para el ejemplo 8 (Reemplazo dinámico)
+    function cleanText() {
+        const val = document.getElementById('cleanInput').value;
+        const result = val.replace(/\D/g, ''); // \D busca todo lo que NO sea un número
+        document.getElementById('cleanResult').innerText = "Solo números: " + result;
+    }
+</script>
+
+</body>
+</html>
